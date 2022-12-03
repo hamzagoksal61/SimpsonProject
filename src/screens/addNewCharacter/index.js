@@ -105,7 +105,6 @@ const AddNewCharacter = () => {
           </Button>
         </VStack>
       </KeyboardAvoidingView>
-      ; };
     </Center>
   );
 };
