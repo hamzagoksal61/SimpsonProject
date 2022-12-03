@@ -33,6 +33,11 @@ const simpsonsSlice = createSlice({
       state.selectedSimpson = action.payload;
     },
     addSimpson(state, action) {
+      const maxId = state.simpsons.data.reduce(
+        (max, simpson) => (simpson.id > max ? simpson.id : max),
+        state.simpsons.data.length === 0 ? 0 : state.simpsons.data[0].id,
+      );
+      action.payload.id = parseInt(maxId) + 1;
       state.simpsons.data.push(action.payload);
       storeObjectData('simpsons', state.simpsons.data);
     },

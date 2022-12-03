@@ -27,7 +27,7 @@ const Simpsons = () => {
   const navigation = useNavigation();
 
   const simpsonsState = useSelector(state => state.simpsons.simpsons);
-
+console.log("si",simpsonsState)
   const simpsonDetail = item => {
     dispatch(setSelectedSimpson(item));
     navigation.navigate('Details');
