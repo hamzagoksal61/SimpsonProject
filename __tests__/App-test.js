@@ -209,10 +209,11 @@ test('should handle a simpson being moved to down', () => {
 });
 
 it('renders correctly', () => {
-  const tree = render( <App>
-    <AddNewCharacter />
-  </App>)
-    .toJSON();
+  const tree = render(
+    <App>
+      <AddNewCharacter />
+    </App>,
+  ).toJSON();
   expect(tree).toMatchSnapshot();
 });
 
@@ -236,7 +237,9 @@ describe('Simpsons', () => {
     );
     expect(container).toBeTruthy();
   });
-});describe('Detail', () => {
+});
+
+describe('Detail', () => {
   it('should render successfully', () => {
     const {container} = render(
       <App>
