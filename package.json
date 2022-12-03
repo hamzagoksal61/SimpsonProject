@@ -6,7 +6,7 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
-    "test": "jest",
+    "test": "jest --runInBand",
     "lint": "eslint ."
   },
   "dependencies": {
@@ -37,6 +37,11 @@
     "react-test-renderer": "18.1.0"
   },
   "jest": {
-    "preset": "react-native"
+    "testEnvironment": "jsdom",
+    "preset": "react-native",
+    "transformIgnorePatterns": [
+      "/node_modules/(?!react-native|native-base-shoutem-theme|react-navigation-stack|@react-navigation|@react-native|react-navigation-fluid-transitions)"
+    ]
+    
   }
 }
